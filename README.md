@@ -69,6 +69,7 @@ Don't forget to change the package name in package.json
 - Add SVGR Support
 - Configure favicons
 - Add models
+- Fix husky
 
 ## Resources
 
