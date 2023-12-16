@@ -8,9 +8,12 @@ import { cn } from '@/lib/utils';
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
 import TextButton from '@/components/buttons/TextButton';
+import HybridButton from '@/components/hybridButtons/HybridButton';
+import HybridIconButton from '@/components/hybridButtons/HybridIconButton';
+import HybridTextButton from '@/components/hybridButtons/HybridTextButton';
 import { IconMap } from '@/components/icons/Icon';
 import ButtonLink from '@/components/links/ButtonLink';
-import PrimaryLink from '@/components/links/PrimaryLink';
+import TextLink from '@/components/links/TextLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Skeleton from '@/components/Skeleton';
@@ -129,10 +132,8 @@ export default function ComponentPage() {
                 the link.
               </Typo>
               <div className='space-x-2'>
-                <PrimaryLink href='/'>Internal Links</PrimaryLink>
-                <PrimaryLink href='https://google.com'>
-                  Outside Links
-                </PrimaryLink>
+                <TextLink href='/'>Internal Links</TextLink>
+                <TextLink href='https://google.com'>Outside Links</TextLink>
               </div>
             </li>
             <li className='space-y-2'>
@@ -350,6 +351,51 @@ export default function ComponentPage() {
                 <IconButton variant='light' icon={IconMap['credit-card']} />
               </div>
             </li>
+
+            <li className='space-y-2'>
+              <Typo level='h2' classes='text-lg md:text-xl'>
+                Hybrid Buttons
+              </Typo>
+              <Typo classes={['!mt-1 text-sm', textColor]}>
+                Can be used as either button or link
+              </Typo>
+              <div className='flex flex-wrap gap-2'>
+                <HybridButton>Hybrid Button</HybridButton>
+                <HybridButton href='https://www.google.com'>
+                  Hybrid Link(ext)
+                </HybridButton>
+                <HybridButton href='/'>Hybrid Link(int)</HybridButton>
+              </div>
+              <div className='flex flex-wrap gap-2'>
+                <HybridIconButton
+                  variant='outline'
+                  icon={IconMap['credit-card']}
+                  onClick={() => alert('Button Clicked')}
+                />
+
+                <HybridIconButton
+                  variant='dark'
+                  href='https://www.google.com'
+                  onClick={() => alert('Button Clicked')}
+                  icon={IconMap['laptop']}
+                />
+
+                <HybridIconButton
+                  variant='light'
+                  href='/'
+                  icon={IconMap['shield']}
+                />
+              </div>
+
+              <div className='flex flex-wrap gap-2'>
+                <HybridTextButton>Hybrid Button</HybridTextButton>
+                <HybridTextButton href='https://www.google.com' variant='basic'>
+                  Hybrid Link(ext)
+                </HybridTextButton>
+                <HybridTextButton href='/'>Hybrid Link(int)</HybridTextButton>
+              </div>
+            </li>
+
             <li className='space-y-2'>
               <Typo level='h2' classes='text-lg md:text-xl'>
                 Custom 404 Page
@@ -385,6 +431,7 @@ export default function ComponentPage() {
                 alt='Image'
               />
             </li>
+
             <li className='space-y-2'>
               <Typo level='h2' classes='text-lg md:text-xl'>
                 Skeleton

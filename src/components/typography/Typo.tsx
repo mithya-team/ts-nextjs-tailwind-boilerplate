@@ -3,11 +3,11 @@ import React, { FC } from 'react';
 
 import { cn } from '@/lib/utils';
 
-type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type TypographyLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 type FontWeight = 'normal' | 'bold' | 'semibold' | 'light';
 
 export interface ITyopoProps {
-  level?: HeadingLevel;
+  level?: TypographyLevel;
   weight?: FontWeight;
   children: React.ReactNode;
   inline?: boolean;
@@ -38,8 +38,8 @@ const Typo: FC<ITyopoProps> = (props) => {
     return <span className={textClass}>{children}</span>;
   }
 
-  const Tag = level === 'p' ? 'p' : level;
-  return <Tag className={textClass}>{children}</Tag>;
+  const Element = level === 'p' ? 'p' : level;
+  return <Element className={textClass}>{children}</Element>;
 };
 
 export default Typo;

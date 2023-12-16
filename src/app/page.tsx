@@ -6,7 +6,7 @@ import * as React from 'react';
 import logger from '@/lib/logger';
 
 import ButtonLink from '@/components/links/ButtonLink';
-import PrimaryLink from '@/components/links/PrimaryLink';
+import TextLink from '@/components/links/TextLink';
 import Typo from '@/components/typography/Typo';
 
 import Logo from '~/svg/Logo.svg';
@@ -40,7 +40,7 @@ export default function HomePage() {
 
           <footer className='absolute bottom-2 text-gray-700'>
             © {new Date().getFullYear()} By{' '}
-            <PrimaryLink href='https://mithyalabs.com'>Mithyalabs</PrimaryLink>
+            <TextLink href='https://mithyalabs.com'>Mithyalabs</TextLink>
           </footer>
         </div>
       </section>
