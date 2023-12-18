@@ -5,6 +5,7 @@ import * as React from 'react';
 
 import logger from '@/lib/logger';
 
+import Header from '@/components/layout/Header';
 import ButtonLink from '@/components/links/ButtonLink';
 import TextLink from '@/components/links/TextLink';
 import Typo from '@/components/typography/Typo';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Head>
         <title>Hi</title>
       </Head>
+      <Header />
       <section className='bg-white'>
         <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
           <Logo className='w-16' />
