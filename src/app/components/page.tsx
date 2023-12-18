@@ -4,6 +4,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 import { cn } from '@/lib/utils';
+import { useColorMode } from '@/hooks/useColorMode';
 
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
@@ -20,7 +21,6 @@ import Skeleton from '@/components/Skeleton';
 import Typo from '@/components/typography/Typo';
 
 import { TOAST_OPTIONS } from '@/constant/toast';
-import { useColorMode } from '@/contexts/ColorModeContext';
 
 export type Color = (typeof colorList)[number];
 

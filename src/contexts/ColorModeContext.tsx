@@ -35,9 +35,4 @@ const ColorModeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   );
 };
 
-export const useColorMode = (): ColorModeContextProps => {
-  const context = React.useContext(ColorModeContext);
-  return context;
-};
-
 export { ColorModeContext, ColorModeProvider };
