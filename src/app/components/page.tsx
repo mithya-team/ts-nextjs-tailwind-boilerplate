@@ -20,14 +20,13 @@ import Skeleton from '@/components/Skeleton';
 import Typo from '@/components/typography/Typo';
 
 import { TOAST_OPTIONS } from '@/constant/toast';
+import { useColorMode } from '@/contexts/ColorModeContext';
 
 export type Color = (typeof colorList)[number];
 
 export default function ComponentPage() {
-  const [mode, setMode] = React.useState<'dark' | 'light'>('light');
-  function toggleMode() {
-    return mode === 'dark' ? setMode('light') : setMode('dark');
-  }
+  const { mode, toggleMode } = useColorMode();
+
   const notify = () => toast.success('Hello from toast', TOAST_OPTIONS);
 
   const textColor = mode === 'dark' ? 'text-gray-300' : 'text-gray-600';
@@ -41,6 +40,7 @@ export default function ComponentPage() {
             mode === 'dark' ? 'text-white' : 'text-black'
           )}
         >
+          {mode}
           <Typo level='h1'>Built-in Components</Typo>
           <ButtonLink className='mt-2' href='/'>
             Back to Home
