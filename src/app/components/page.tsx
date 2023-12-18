@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { toast } from 'react-toastify';
 
+import { toast } from '@/lib/toast';
 import { cn } from '@/lib/utils';
 import { useColorMode } from '@/hooks/useColorMode';
 
@@ -20,14 +20,12 @@ import NextImage from '@/components/NextImage';
 import Skeleton from '@/components/Skeleton';
 import Typo from '@/components/typography/Typo';
 
-import { TOAST_OPTIONS } from '@/constant/toast';
-
 export type Color = (typeof colorList)[number];
 
 export default function ComponentPage() {
   const { mode, toggleMode } = useColorMode();
 
-  const notify = () => toast.success('Hello from toast', TOAST_OPTIONS);
+  const notify = () => toast.success('hello from toast');
 
   const textColor = mode === 'dark' ? 'text-gray-300' : 'text-gray-600';
 

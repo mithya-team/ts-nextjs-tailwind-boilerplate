@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { ToastContainer } from 'react-toastify';
 
 import '@/styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { ToastContainer } from '@/lib/toast';
+
+import { GLOBAL_TOAST_ID } from '@/constant/toast';
 import { AppProviders } from '@/contexts/AppProvider';
 
 export default function RootLayout({
@@ -16,7 +18,7 @@ export default function RootLayout({
       <body>
         <AppProviders>
           {children}
-          <ToastContainer />
+          <ToastContainer containerId={GLOBAL_TOAST_ID} />
         </AppProviders>
       </body>
     </html>
