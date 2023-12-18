@@ -78,3 +78,11 @@ Don't forget to change the package name in package.json
 - SVGR Support **(Does not supports React Props Type)**
 - Override the next-env if the type is important: [link](https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration)
 - Add Custom fonts: [link](https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/)
+
+## Recommendations
+
+- Use HybridButton Link over Button and Link
+- Add reusable or shared components, layout in src/components and src/layout diirectory respectively
+- Use logger from src/lib/logger over console
+- Abstract the UI and business logic into hooks or context.
+- Prefer context over hooks to write logic
